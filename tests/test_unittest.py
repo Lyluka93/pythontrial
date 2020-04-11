@@ -29,3 +29,24 @@ class TestTicketMachine(unittest.TestCase):
         other = machine.getNewTicket()
         # Then:
         self.assertNotEqual(one, other, "Tickets should be unique")
+
+    def test_customer_identity(self):
+        # Given
+        from greeting.ticket_machine import Customer
+        # When
+        sarah = Customer()
+        # Then:
+        assert sarah is not None
+
+    def test_customer_gets_a_ticket(self):
+        # Given
+        from greeting.ticket_machine import TicketMachine
+        from greeting.ticket_machine import Customer
+        # When
+        machine = TicketMachine()
+        one = machine.getNewTicket()
+        sarah = Customer()
+        sarahticket = sarah.receiveTicket(machine)
+        # Then:
+        self.assertNotEqual(one, sarahticket, "Customer should get another ticket")
+
