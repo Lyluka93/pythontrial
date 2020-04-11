@@ -2,6 +2,12 @@
 
 ## To run unit and blackbox tests
 
+Prerequisites: 
+ - python3 and 
+ - tox, 
+ 
+For running unittests and blackbox tests, run the command `tox`, sample output below:
+
     $ tox
     unittest run-test-pre: PYTHONHASHSEED='3621537090'
     unittest run-test: commands[0] | python -m unittest discover -s tests
@@ -31,6 +37,8 @@
       congratulations :)
 
 ## To experiment in jupyter
+
+To play around and prototype just run the jupyter environment, with the command `tox -e jupyter`
 
     $ tox -e jupyter
 
